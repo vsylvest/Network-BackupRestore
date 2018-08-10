@@ -1,0 +1,16 @@
+---
+- name: backup router configurations
+  hosts: tag_Workshop_rtr*
+  connection: network_cli
+  gather_facts: no
+    tasks:
+    - name: gather ios_facts
+      ios_facts:
+      register: version
+
+    - debug:
+        msg: "{{version}}"
+
+    - name: Backup configuration
+      ios_config:
+        backup: yes
