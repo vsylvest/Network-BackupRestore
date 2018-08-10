@@ -1,6 +1,7 @@
 ---
 - name: backup router configurations
-  hosts: tag_Workshop_rtr*
+  hosts: 
+    tag_Workshop_rtr2_linklight_rtr2
   connection: network_cli
   gather_facts: no
     tasks:
