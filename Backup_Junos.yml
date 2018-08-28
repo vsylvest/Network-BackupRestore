@@ -1,10 +1,8 @@
 ---
-- name: backup router configurations
+- name: gather router information
   hosts: juniper
-  connection: network_cli
+  connection: local
   gather_facts: no
-  roles: 
-  - Juniper.junos
   tasks:
     - name: gather junos_facts
       junos_facts:
