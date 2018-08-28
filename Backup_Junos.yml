@@ -1,0 +1,12 @@
+---
+- name: backup router configurations
+  hosts: juniper
+  connection: local
+  gather_facts: no
+  tasks:
+    - name: gather ios_facts
+      junos_facts:
+      register: version
+
+    - debug:
+        msg: "{{version}}"
