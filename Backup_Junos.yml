@@ -1,7 +1,7 @@
 ---
 - name: backup router configurations
   hosts: juniper
-  connection: local
+  connection: netconf
   gather_facts: no
   tasks:
     - name: gather ios_facts
