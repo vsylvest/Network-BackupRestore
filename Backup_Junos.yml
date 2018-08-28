@@ -3,6 +3,8 @@
   hosts: juniper
   connection: network_cli
   gather_facts: no
+  roles: 
+  - Juniper.junos
   tasks:
     - name: gather junos_facts
       junos_facts:
