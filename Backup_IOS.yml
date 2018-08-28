@@ -1,6 +1,6 @@
 ---
 - name: backup router configurations
-  hosts: routers
+  hosts: cisco
   connection: local
   gather_facts: no
   tasks:
