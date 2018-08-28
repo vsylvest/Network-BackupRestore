@@ -1,5 +1,5 @@
 ---
-- name: gather router information
+- name: backup router configuration
   hosts: juniper
   connection: local
   gather_facts: no
@@ -10,3 +10,7 @@
 
     - debug:
         msg: "{{version}}"
+
+    - name: Backup configuration
+      junos_config:
+        backup: yes
