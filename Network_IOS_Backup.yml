@@ -5,6 +5,13 @@
   gather_facts: no
 
   tasks:
+    - name: gather ios_facts
+      ios_facts:
+      register: version
+
+    - debug:
+        msg: "{{version}}"
+
     - name: BACKUP THE CONFIG
       ios_config:
         backup: yes
