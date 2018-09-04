@@ -9,8 +9,15 @@
       ios_facts:
       register: iosfact
     
-    - name: COPY RUNNING CONFIG TO ROUTER
-      command: "scp -i /home/student1/.ssh/aws-private.pem ./backup/{{inventory_hostname}}.config ec2-user@{{inventory_hostname}}:/{{inventory_hostname}}.config"
+#    - name: COPY RUNNING CONFIG TO ROUTER
+#      command: "scp -i /home/student1/.ssh/aws-private.pem ./backup/{{inventory_hostname}}.config ec2-user@{{inventory_hostname}}:/{{inventory_hostname}}.config"
+
+     - name: copy file at root dir of flash in slot 3 of sw1(ios)
+       net_put:
+         src: ./backup/{{inventory_hostname}}.config
+         protocol: sftp
+         dest : /{{inventory_hostname}}.config
+
 
     - name: CONFIG REPLACE
       ios_command:
