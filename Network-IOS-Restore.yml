@@ -12,7 +12,9 @@
     - name: copy file at root dir of flash
       net_put:
         src: ./backup/{{inventory_hostname}}.config
-
+        protocol: sftp
+        dest : flash3:/{{inventory_hostname}}.config
+        
     - name: CONFIG REPLACE
       ios_command:
         commands:
