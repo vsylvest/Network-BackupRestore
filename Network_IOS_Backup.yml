@@ -1,7 +1,7 @@
 ---
 - name: BACKUP ROUTER CONFIGURATIONS
   hosts: cisco
-  connection: local
+  connection: network_cli
   gather_facts: no
 
   tasks:
