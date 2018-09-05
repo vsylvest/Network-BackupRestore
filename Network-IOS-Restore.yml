@@ -16,7 +16,7 @@
        net_put:
          src: ./backup/{{inventory_hostname}}.config
          protocol: sftp
-         dest : /{{inventory_hostname}}.config
+         dest : flash:/{{inventory_hostname}}.config
 
 
     - name: CONFIG REPLACE
