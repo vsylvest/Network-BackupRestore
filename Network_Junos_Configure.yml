@@ -1,5 +1,5 @@
 ---
-- name: Configure GRE Tunnel between rtr1 and rtr2
+- name: Configure Juniper Router
   hosts: juniper
   gather_facts: no
   connection: netconf
