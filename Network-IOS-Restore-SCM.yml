@@ -11,7 +11,7 @@
     
     - name: copy file at root dir of flash
       net_put:
-        src: /homt/student1/ios_backup/{{inventory_hostname}}.config
+        src: /home/student1/ios_backup/{{inventory_hostname}}.config
         protocol: scp
         dest : flash:/{{inventory_hostname}}.config
         
