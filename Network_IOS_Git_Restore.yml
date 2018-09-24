@@ -14,7 +14,7 @@
         dest: ./git_backup/rtr1.config
         owner: awx
         group: awx
-        mode: 0644 
+        mode: 0400
 
     - name: Download latest rtr2 config file
       get_url: 
@@ -22,4 +22,4 @@
         dest: ./git_backup/rtr2.config
         owner: awx
         group: awx
-        mode: 0644 
+        mode: 0400
