@@ -1,14 +1,9 @@
 ---
-- name: RESTORE CONFIGURATION from SCM
-  hosts: cisco
-  connection: network_cli
+- name: Download Config from SCM
+  hosts: tag_Name_linklight_student1_ansible
+  connection: local
   gather_facts: no
-
   tasks:
-    - name: gather_ios facts
-      ios_facts:
-      register: iosfact
-      
     - name: Download latest rtr1 config file
       get_url: 
         url: https://raw.githubusercontent.com/etg-ansible-demo/Networks/master/ios_rtr1.config
@@ -24,6 +19,17 @@
         owner: awx
         group: awx
         mode: 0644
+
+- name: RESTORE CONFIGURATION 
+  hosts: cisco
+  connection: network_cli
+  gather_facts: no
+
+  tasks:
+    - name: gather_ios facts
+      ios_facts:
+      register: iosfact
+
     
     - name: copy file at root dir of flash
       net_put:
