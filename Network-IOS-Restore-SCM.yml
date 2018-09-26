@@ -4,7 +4,9 @@
   gather_facts: no
   tasks:
  
-      
+    - name: remove previous config files.
+      shell: "rm -rf ./git_backup/rtr* warn=False"
+         
     - name: Download latest rtr1 config file
       get_url: 
         url: https://raw.githubusercontent.com/etg-ansible-demo/Networks/master/ios_rtr1.config
