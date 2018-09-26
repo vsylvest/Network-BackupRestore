@@ -10,7 +10,7 @@
     - name: Download latest rtr1 config file
       get_url: 
         url: https://raw.githubusercontent.com/etg-ansible-demo/Networks/master/ios_rtr1.config
-        dest: ./git_backup/rtr1.config
+        dest: /var/lib/awx/venv/ansible/rtr1.config
         owner: awx
         group: awx
         mode: 0400
@@ -18,7 +18,7 @@
     - name: Download latest rtr2 config file
       get_url: 
         url: https://raw.githubusercontent.com/etg-ansible-demo/Networks/master/ios_rtr2.config
-        dest: ./git_backup/rtr2.config
+        dest: /var/lib/awx/venv/ansible/git_backup/rtr2.config
         owner: awx
         group: awx
         mode: 0400
