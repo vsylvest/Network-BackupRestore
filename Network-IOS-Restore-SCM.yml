@@ -3,9 +3,7 @@
   hosts: localhost
   gather_facts: no
   tasks:
-  
-    - name: Remove any previous config files
-      shell: 'rm -rf /var/lib/awx/venv/ansible/rtr* warn=False' 
+ 
       
     - name: Download latest rtr1 config file
       get_url: 
