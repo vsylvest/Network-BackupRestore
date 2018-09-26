@@ -1,3 +1,30 @@
+---
+- name: Download Config from SCM
+  hosts: localhost
+  gather_facts: no
+  tasks:
+  
+    - name: Remove any previous config files
+      shell: 'rm -rf ./git_backup/rtr* warn=False' 
+      
+    - name: Download latest rtr1 config file
+      get_url: 
+        url: https://raw.githubusercontent.com/etg-ansible-demo/Networks/master/ios_rtr1.config
+        dest: ./git_backup/rtr1.config
+        owner: awx
+        group: awx
+        mode: 0400
+
+    - name: Download latest rtr2 config file
+      get_url: 
+        url: https://raw.githubusercontent.com/etg-ansible-demo/Networks/master/ios_rtr2.config
+        dest: ./git_backup/rtr2.config
+        owner: awx
+        group: awx
+        mode: 0400
+
+
+
 - name: RESTORE CONFIGURATION from SCM
   hosts: cisco
   connection: network_cli
